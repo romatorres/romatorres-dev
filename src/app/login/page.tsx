@@ -34,28 +34,28 @@ export default function Login() {
             <label className="block text-gray-700 text-sm font-bold mb-2">
               Email
             </label>
-            <input
+            <Input
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="w-full p-2 border rounded"
+              className="w-full"
               required
             />
           </div>
           <div className="mb-6">
             <label className="block text-gray-700 text-sm font-bold mb-2">
-              Password
+              Senha
             </label>
             <Input
               type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="w-full p-2 border rounded"
+              className="w-full"
               required
             />
           </div>
           <Button type="submit" className="w-full" variant="default">
-            Sign In
+            Entrar
           </Button>
         </form>
       </div>
