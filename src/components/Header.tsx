@@ -31,8 +31,8 @@ export default function Header() {
       <nav className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           <a
-            href="#hero"
-            onClick={(e) => scrollToSection(e, "hero")}
+            href="#header"
+            onClick={(e) => scrollToSection(e, "header")}
             className="text-2xl font-bold"
           >
             Logo
@@ -69,7 +69,12 @@ export default function Header() {
             </a>
           </div>
 
-          <button className="md:hidden" onClick={() => setIsOpen(!isOpen)}>
+          <button
+            className="md:hidden"
+            onClick={() => setIsOpen(!isOpen)}
+            aria-label={isOpen ? "Close menu" : "Open menu"}
+            aria-expanded={isOpen}
+          >
             <svg
               className="w-6 h-6"
               fill="none"
