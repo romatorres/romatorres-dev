@@ -6,16 +6,7 @@ import ProjectForm from "./ProjectForm";
 import toast from "react-hot-toast";
 import Image from "next/image";
 import ConfirmDialog from "@/components/ui/ConfirmDialog";
-
-type Project = {
-  id: string;
-  title: string;
-  description: string;
-  imageUrl: string | null;
-  link: string;
-  order: number;
-  isActive: boolean;
-};
+import { Project } from "../types";
 
 export default function ProjectList() {
   const [projects, setProjects] = useState<Project[]>([]);
@@ -110,7 +101,7 @@ export default function ProjectList() {
               </p>
 
               <span className="text-gray-600 mb-4 line-clamp-2">
-                <a href={project.link} target="_blank">
+                <a href={project.link!} target="_blank">
                   {project.link}
                 </a>
               </span>

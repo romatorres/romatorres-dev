@@ -1,25 +1,27 @@
-'use client'
+"use client";
 
-import { signIn } from 'next-auth/react'
-import { FormEvent, useState } from 'react'
-import { useRouter } from 'next/navigation'
+import { signIn } from "next-auth/react";
+import { FormEvent, useState } from "react";
+import { useRouter } from "next/navigation";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
 
 export default function Login() {
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
-  const router = useRouter()
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const router = useRouter();
 
   async function handleSubmit(event: FormEvent) {
-    event.preventDefault()
-    
-    const result = await signIn('credentials', {
+    event.preventDefault();
+
+    const result = await signIn("credentials", {
       email,
       password,
-      redirect: false
-    })
+      redirect: false,
+    });
 
     if (result?.ok) {
-      router.push('/dashboard')
+      router.push("/dashboard");
     }
   }
 
@@ -44,7 +46,7 @@ export default function Login() {
             <label className="block text-gray-700 text-sm font-bold mb-2">
               Password
             </label>
-            <input
+            <Input
               type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
@@ -52,14 +54,11 @@ export default function Login() {
               required
             />
           </div>
-          <button
-            type="submit"
-            className="w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-600"
-          >
+          <Button type="submit" className="w-full" variant="default">
             Sign In
-          </button>
+          </Button>
         </form>
       </div>
     </div>
-  )
+  );
 }

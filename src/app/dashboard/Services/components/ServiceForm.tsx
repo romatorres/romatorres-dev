@@ -4,6 +4,9 @@ import { useState, useEffect } from "react";
 import toast from "react-hot-toast";
 import Image from "next/image";
 import { Service } from "../types";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Button } from "@/components/ui/button";
 
 type ServiceFormProps = {
   service?: Service;
@@ -88,7 +91,7 @@ export default function ServiceForm({
           <label className="block text-sm font-medium text-gray-700">
             Título
           </label>
-          <input
+          <Input
             type="text"
             value={title}
             onChange={(e) => setTitle(e.target.value)}
@@ -101,7 +104,7 @@ export default function ServiceForm({
           <label className="block text-sm font-medium text-gray-700">
             Descrição
           </label>
-          <textarea
+          <Textarea
             value={description}
             onChange={(e) => setDescription(e.target.value)}
             className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
@@ -114,7 +117,7 @@ export default function ServiceForm({
           <label className="block text-sm font-medium text-gray-700">
             Icone
           </label>
-          <input
+          <Input
             type="text"
             value={icon}
             onChange={(e) => setIcon(e.target.value)}
@@ -127,7 +130,7 @@ export default function ServiceForm({
           <label className="block text-sm font-medium text-gray-700">
             Imagem URL
           </label>
-          <input
+          <Input
             type="text"
             value={imageUrl}
             onChange={(e) => setImageUrl(e.target.value)}
@@ -153,7 +156,7 @@ export default function ServiceForm({
           <label className="block text-sm font-medium text-gray-700">
             Ordem
           </label>
-          <input
+          <Input
             type="number"
             value={order}
             onChange={(e) => setOrder(Number(e.target.value))}
@@ -163,21 +166,19 @@ export default function ServiceForm({
         </div>
 
         <div className="flex space-x-4">
-          <button
-            type="submit"
-            className="flex-1 bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
-          >
+          <Button type="submit" className="flex-1" variant="default">
             {service ? "Atualizar o Serviço" : "Adicionar Serviço"}
-          </button>
+          </Button>
 
           {onCancel && (
-            <button
+            <Button
               type="button"
               onClick={onCancel}
-              className="flex-1 bg-gray-200 text-gray-800 py-2 px-4 rounded-md hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2"
+              className="flex-1"
+              variant="secondary"
             >
               Cancelar
-            </button>
+            </Button>
           )}
         </div>
       </div>
