@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -33,12 +34,17 @@ export default function Header() {
           <a
             href="#header"
             onClick={(e) => scrollToSection(e, "header")}
-            className="text-2xl font-bold text-title"
+            className="relative w-32 h-11"
           >
-            Logo
+            <Image
+              src="/img/logo.png"
+              alt="Logomarca RomaTorres"
+              fill
+              className="object-contain"
+            />
           </a>
 
-          <div className="hidden md:flex space-x-8 text-title">
+          <div className="hidden md:flex space-x-8 text-title font-oswald">
             <a
               href="#about"
               onClick={(e) => scrollToSection(e, "about")}

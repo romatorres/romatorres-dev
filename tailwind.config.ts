@@ -9,6 +9,10 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        primary: ["var(--font-oswald)"],
+        secondary: ["var(--font-openSans)"],
+      },
       backgroundImage: {
         hero: "url('/img/hero_bg.jpg')",
       },
