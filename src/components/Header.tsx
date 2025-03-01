@@ -27,18 +27,18 @@ export default function Header() {
   };
 
   return (
-    <header className="fixed w-full bg-white/90 backdrop-blur-sm z-50">
+    <header className="fixed w-full bg-background/20 backdrop-blur-sm z-50">
       <nav className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           <a
             href="#header"
             onClick={(e) => scrollToSection(e, "header")}
-            className="text-2xl font-bold"
+            className="text-2xl font-bold text-title"
           >
             Logo
           </a>
 
-          <div className="hidden md:flex space-x-8">
+          <div className="hidden md:flex space-x-8 text-title">
             <a
               href="#about"
               onClick={(e) => scrollToSection(e, "about")}

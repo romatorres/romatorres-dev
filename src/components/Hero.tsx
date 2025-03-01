@@ -4,9 +4,9 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="min-h-screen flex items-center justify-center bg-hero bg-center"
+      className="min-h-screen flex items-center justify-center bg-hero bg-center bg-cover bg-no-repeat"
     >
-      <div className="container mx-auto px-6 text-center">
+      <div className="container mx-auto px-6 text-center text-title">
         <h1 className="text-5xl font-bold mb-4">Welcome to Our Company</h1>
         <p className="text-xl">Creating amazing digital experiences</p>
       </div>
