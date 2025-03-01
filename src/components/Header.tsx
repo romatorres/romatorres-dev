@@ -44,34 +44,34 @@ export default function Header() {
             />
           </a>
 
-          <div className="hidden md:flex space-x-8 text-title font-oswald">
+          <div className="hidden md:flex space-x-8 text-title font-secondary text-xs">
             <a
               href="#about"
               onClick={(e) => scrollToSection(e, "about")}
-              className="hover:text-blue-600"
+              className="hover:text-primary"
             >
-              About
+              SOBRE
             </a>
             <a
               href="#services"
               onClick={(e) => scrollToSection(e, "services")}
-              className="hover:text-blue-600"
+              className="hover:text-primary"
             >
-              Services
+              SERVIÇOS
             </a>
             <a
               href="#projects"
               onClick={(e) => scrollToSection(e, "projects")}
-              className="hover:text-blue-600"
+              className="hover:text-primary"
             >
-              Projects
+              PROJETOS
             </a>
             <a
               href="#contacts"
               onClick={(e) => scrollToSection(e, "contacts")}
-              className="hover:text-blue-600"
+              className="hover:text-primary"
             >
-              Contact
+              CONTATOS
             </a>
           </div>
 
