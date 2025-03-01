@@ -9,9 +9,12 @@ export default {
   ],
   theme: {
     extend: {
-      colors: {
-        background: "hsl(var(--background))",
-        foreground: "hsl(var(--foreground))",
+      backgroundImage: {
+        hero: "url('/public/img//hero_bg.jpg')",
+      }
+,      colors: {
+        background: "#070707",
+        foreground: "#050505",
         card: {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
