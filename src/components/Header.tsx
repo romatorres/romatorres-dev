@@ -12,7 +12,7 @@ export default function Header() {
   ) => {
     e.preventDefault();
     const element = document.getElementById(sectionId);
-    const offset = 80; // Adjust this value based on your header height
+    const offset = 80; // Altura do cabeçalho
 
     if (element) {
       const elementPosition = element.getBoundingClientRect().top;
@@ -24,12 +24,12 @@ export default function Header() {
       });
     }
 
-    setIsOpen(false); // Close mobile menu after clicking
+    setIsOpen(false); // Fechar menu móvel após clicar
   };
 
   return (
     <header className="fixed w-full bg-background/20 backdrop-blur-sm z-50">
-      <nav className="container mx-auto px-6 py-4">
+      <nav className="container mx-auto px-12 py-10">
         <div className="flex items-center justify-between">
           <a
             href="#header"
@@ -44,32 +44,39 @@ export default function Header() {
             />
           </a>
 
-          <div className="hidden md:flex space-x-8 text-title font-secondary text-xs">
+          <div className="hidden md:flex space-x-8 text-secondary font-secondary text-xs font-medium">
+            <a
+              href="#home"
+              onClick={(e) => scrollToSection(e, "header")}
+              className="hover:text-primary duration-300"
+            >
+              HOME
+            </a>
             <a
               href="#about"
               onClick={(e) => scrollToSection(e, "about")}
-              className="hover:text-primary"
+              className="hover:text-primary duration-300"
             >
               SOBRE
             </a>
             <a
               href="#services"
               onClick={(e) => scrollToSection(e, "services")}
-              className="hover:text-primary"
+              className="hover:text-primary duration-300"
             >
               SERVIÇOS
             </a>
             <a
               href="#projects"
               onClick={(e) => scrollToSection(e, "projects")}
-              className="hover:text-primary"
+              className="hover:text-primary duration-300"
             >
               PROJETOS
             </a>
             <a
               href="#contacts"
               onClick={(e) => scrollToSection(e, "contacts")}
-              className="hover:text-primary"
+              className="hover:text-primary duration-300"
             >
               CONTATOS
             </a>
