@@ -2,28 +2,16 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import { scrollToSection } from "@/lib/scroll";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
-  const scrollToSection = (
+  const handleNavClick = (
     e: React.MouseEvent<HTMLAnchorElement>,
     sectionId: string
   ) => {
-    e.preventDefault();
-    const element = document.getElementById(sectionId);
-    const offset = 80; // Altura do cabeçalho
-
-    if (element) {
-      const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - offset;
-
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: "smooth",
-      });
-    }
-
+    scrollToSection(e, sectionId);
     setIsOpen(false); // Fechar menu móvel após clicar
   };
 
@@ -47,7 +35,7 @@ export default function Header() {
           <div className="hidden md:flex space-x-8 text-secondary font-secondary text-xs font-medium">
             <a
               href="#home"
-              onClick={(e) => scrollToSection(e, "header")}
+              onClick={(e) => handleNavClick(e, "header")}
               className="hover:text-primary duration-300"
             >
               HOME

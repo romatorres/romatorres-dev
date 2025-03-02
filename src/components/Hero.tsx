@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import { Button } from "./ui/button";
+import { scrollToSection } from "@/lib/scroll";
 
 export default function Hero() {
   const [text, setText] = useState("");
@@ -44,13 +45,15 @@ export default function Hero() {
         {/* Bloco "ROLAR SCROLL" na vertical */}
         <div className="flex flex-col items-start">
           <p className="writing-mode-vertical-lr rotate-180 text-xs font-secondary text-secondary animate-tremor cursor-pointer">
-            <a href="#about">ROLAR SCROLL &#x2192;</a>
+            <a href="#about" onClick={(e) => scrollToSection(e, "about")}>
+              ROLAR SCROLL &#x2192;
+            </a>
           </p>
         </div>
 
         {/* Texto central */}
         <div className="text-center text-secondary">
-          <h3 className="text-sm font-medium font-primary mb-4">
+          <h3 className="text-sm font-medium font-primary mb-4 tracking-widest">
             WEB DEVELOPER & UX DESIGNER
           </h3>
           <h1 className="text-7xl font-semibold font-primary mb-4">
