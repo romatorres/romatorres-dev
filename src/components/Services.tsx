@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Settings } from "lucide-react";
 import Image from "next/image";
 import { Button } from "./ui/button";
 import { Service } from "@/app/dashboard/Services/types";
@@ -21,7 +20,7 @@ export default function Services() {
 
   return (
     <section id="services">
-      <div className="container mx-auto px-4 md:px-12 py-0 lg:py-16">
+      <div className="container mx-auto px-4 md:px-12 py-12 lg:py-16">
         <div>
           <h2 className="font-primary text-secondary text-4xl md:text-5xl lg:text-7xl font-bold mb-3 text-center">
             SERVIÇOS
@@ -35,36 +34,28 @@ export default function Services() {
           />
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 mt-16 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 md:mt-16 mt-12 gap-8">
           {services.map((service) => (
             <div
               key={service.id}
               className="flex items-center  bg-gradient-to-t from-[#181818] to-[#121212] rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
             >
-              <div className="flex-shrink-0 relative h-28 w-28 m-8">
-                {service.imageUrl ? (
+              <div className="flex-shrink-0 relative md:h-28 md:w-28 h-20 w-20 md:m-8 m-4">
+                {service.imageUrl && (
                   <Image
                     src={service.imageUrl}
                     alt={service.title}
                     fill
                     className="object-cover rounded-lg"
                   />
-                ) : (
-                  <div className="w-full h-full flex items-center justify-center bg-gray-100">
-                    {service.icon ? (
-                      <span className="text-4xl">{service.icon}</span>
-                    ) : (
-                      <Settings className="w-12 h-12 text-gray-400" />
-                    )}
-                  </div>
                 )}
               </div>
-
-              <div className="pr-8">
-                <h3 className="text-secondary text-3xl font-primary uppercase font-bold mb-2">
+              {/* Textos */}
+              <div className="md:my-8 my-4 md:mr-8 mr-4 ">
+                <h3 className="text-secondary md:text-3xl text-xl font-primary uppercase md:font-bold font-semibold md:mb-2 mb-1">
                   {service.title}
                 </h3>
-                <p className="text-white font-secondary text-sm line-clamp-3">
+                <p className="text-white font-secondary md:text-sm text-xs line-clamp-4">
                   {service.description}
                 </p>
               </div>
