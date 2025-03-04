@@ -41,9 +41,9 @@ export default function Hero() {
       id="hero"
       className="min-h-screen flex flex-col items-center justify-center bg-hero bg-center bg-cover bg-no-repeat"
     >
-      <div className="container mx-auto flex justify-between items-center">
-        {/* Bloco "ROLAR SCROLL" na vertical */}
-        <div className="flex flex-col items-start">
+      <div className="container mx-auto flex flex-col lg:flex-row justify-between items-center px-4">
+        {/* Bloco "ROLAR SCROLL" na vertical - moved outside container */}
+        <div className="hidden lg:flex flex-col items-start mb-8 lg:mb-0 order-3 lg:order-1">
           <p className="writing-mode-vertical-lr rotate-180 text-xs font-secondary text-secondary animate-tremor cursor-pointer">
             <a href="#about" onClick={(e) => scrollToSection(e, "about")}>
               ROLAR SCROLL &#x2192;
@@ -52,11 +52,11 @@ export default function Hero() {
         </div>
 
         {/* Texto central */}
-        <div className="text-center text-secondary">
+        <div className="text-center text-secondary mt-20 lg:mt-0 mb-8 lg:mb-0 order-1 lg:order-2">
           <h3 className="text-sm font-medium font-primary mb-4 tracking-widest">
             WEB DEVELOPER & UX DESIGNER
           </h3>
-          <h1 className="text-7xl font-semibold font-primary mb-4">
+          <h1 className="text-4xl lg:text-7xl font-semibold font-primary mb-4">
             {text}
             <span className="cursor text-primary">l</span>
           </h1>
@@ -67,7 +67,7 @@ export default function Hero() {
         </div>
 
         {/* Ícones na vertical */}
-        <div className="flex flex-col items-center gap-4 px-10">
+        <div className="flex flex-row lg:flex-col items-center gap-4 px-10 order-2 lg:order-3">
           <Image src="/img/git.svg" alt="Icone Github" height={26} width={26} />
           <Image
             src="/img/insta.svg"
@@ -85,9 +85,26 @@ export default function Hero() {
           />
         </div>
       </div>
-      <div className="flex gap-4 mt-20">
-        <Button>CONTRATAR</Button>
-        <Button variant="outline">MEUS TRABALHOS</Button>
+      <div className="flex flex-col items-center gap-4 mt-20">
+        <div className="flex gap-4">
+          <Button onClick={(e) => scrollToSection(e, "contacts")}>
+            CONTRATAR
+          </Button>
+          <Button
+            variant="outline"
+            onClick={(e) => scrollToSection(e, "projects")}
+          >
+            MEUS TRABALHOS
+          </Button>
+        </div>
+        {/* Mobile version of Rolar Scroll */}
+        <div className="flex lg:hidden mt-16 mb-8">
+          <p className="text-xs font-secondary text-secondary animate-tremor cursor-pointer">
+            <a href="#about" onClick={(e) => scrollToSection(e, "about")}>
+              ROLAR SCROLL &#x2192;
+            </a>
+          </p>
+        </div>
       </div>
     </section>
   );

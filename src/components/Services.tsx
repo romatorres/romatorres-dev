@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { Settings } from "lucide-react";
 import Image from "next/image";
+import { Button } from "./ui/button";
 import { Service } from "@/app/dashboard/Services/types";
 
 export default function Services() {
@@ -19,31 +20,34 @@ export default function Services() {
   }, []);
 
   return (
-    <section id="services" className="py-20">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">
-            Nossos Serviços
+    <section id="services">
+      <div className="container mx-auto px-4 md:px-12 py-0 lg:py-16">
+        <div>
+          <h2 className="font-primary text-secondary text-4xl md:text-5xl lg:text-7xl font-bold mb-3 text-center">
+            SERVIÇOS
           </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Conheça nossa gama completa de serviços profissionais
-          </p>
+          <Image
+            src="/img/rectangle.svg"
+            alt="Retangulo Titulo"
+            height={12}
+            width={285}
+            className="mx-auto"
+          />
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 mt-16 gap-8">
           {services.map((service) => (
             <div
               key={service.id}
-              className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
+              className="flex items-center  bg-gradient-to-t from-[#181818] to-[#121212] rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
             >
-              <div className="relative h-64 w-full">
+              <div className="flex-shrink-0 relative h-28 w-28 m-8">
                 {service.imageUrl ? (
                   <Image
                     src={service.imageUrl}
                     alt={service.title}
                     fill
-                    className="object-cover"
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    className="object-cover rounded-lg"
                   />
                 ) : (
                   <div className="w-full h-full flex items-center justify-center bg-gray-100">
@@ -56,16 +60,22 @@ export default function Services() {
                 )}
               </div>
 
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-gray-900 mb-2">
+              <div className="pr-8">
+                <h3 className="text-secondary text-3xl font-primary uppercase font-bold mb-2">
                   {service.title}
                 </h3>
-                <p className="text-gray-600 line-clamp-3">
+                <p className="text-white font-secondary text-sm line-clamp-3">
                   {service.description}
                 </p>
               </div>
             </div>
           ))}
+        </div>
+        <div className="flex flex-col justify-center md:flex-row gap-4 mt-20">
+          <Button className="w-full md:w-auto">CONTRATAR</Button>
+          <Button variant="outline" className="w-full md:w-auto">
+            MEUS TRABALHOS
+          </Button>
         </div>
       </div>
     </section>

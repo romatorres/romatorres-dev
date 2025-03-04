@@ -1,28 +1,42 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import { scrollToSection } from "@/lib/scroll";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 0);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const handleNavClick = (
     e: React.MouseEvent<HTMLAnchorElement>,
     sectionId: string
   ) => {
     scrollToSection(e, sectionId);
-    setIsOpen(false); // Fechar menu móvel após clicar
+    setIsOpen(false);
   };
 
   return (
-    <header className="fixed w-full bg-background/20 backdrop-blur-sm z-50">
-      <nav className="container mx-auto px-12 py-10">
+    <header 
+      className={`fixed w-full backdrop-blur-sm z-50 transition-colors duration-300 ${
+        isScrolled || isOpen ? 'bg-background' : 'lg:bg-background/20 bg-background'
+      }`}
+    >
+      <nav className="container mx-auto px-4 md:px-12 py-4 md:py-6">
         <div className="flex items-center justify-between">
           <a
             href="#header"
-            onClick={(e) => scrollToSection(e, "header")}
-            className="relative w-32 h-11"
+            onClick={(e) => handleNavClick(e, "header")}
+            className="relative w-24 h-8 md:w-32 md:h-11"
           >
             <Image
               src="/img/logo.png"
@@ -42,42 +56,41 @@ export default function Header() {
             </a>
             <a
               href="#about"
-              onClick={(e) => scrollToSection(e, "about")}
+              onClick={(e) => handleNavClick(e, "about")}
               className="hover:text-primary duration-300"
             >
               SOBRE
             </a>
             <a
               href="#services"
-              onClick={(e) => scrollToSection(e, "services")}
+              onClick={(e) => handleNavClick(e, "services")}
               className="hover:text-primary duration-300"
             >
               SERVIÇOS
             </a>
             <a
               href="#projects"
-              onClick={(e) => scrollToSection(e, "projects")}
+              onClick={(e) => handleNavClick(e, "projects")}
               className="hover:text-primary duration-300"
             >
               PROJETOS
             </a>
             <a
               href="#contacts"
-              onClick={(e) => scrollToSection(e, "contacts")}
+              onClick={(e) => handleNavClick(e, "contacts")}
               className="hover:text-primary duration-300"
             >
               CONTATOS
             </a>
           </div>
-
           <button
-            className="md:hidden"
+            className="md:hidden w-6 h-6 text-secondary"
             onClick={() => setIsOpen(!isOpen)}
             aria-label={isOpen ? "Close menu" : "Open menu"}
             aria-expanded={isOpen}
           >
             <svg
-              className="w-6 h-6"
+              className="w-5 h-5 md:w-6 md:h-6"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -92,38 +105,45 @@ export default function Header() {
           </button>
         </div>
         <div
-          className={`md:hidden fixed top-[72px] right-0 w-full bg-white/90 backdrop-blur-sm p-6 transform transition-transform duration-300 ease-in-out ${
+          className={`md:hidden fixed top-[64px] md:top-[72px] right-0 w-full bg-background/90 backdrop-blur-sm p-4 md:p-6 transform transition-transform duration-300 ease-in-out ${
             isOpen ? "translate-x-0" : "translate-x-full"
           }`}
         >
-          <div className="space-y-4 flex flex-col items-center">
+          <div className="space-y-4 flex flex-col items-center text-secondary text-xs font-medium">
+            <a
+              href="#home"
+              onClick={(e) => handleNavClick(e, "header")}
+              className="block hover:text-primary duration-300"
+            >
+              HOME
+            </a>
             <a
               href="#about"
-              onClick={(e) => scrollToSection(e, "about")}
-              className="block hover:text-blue-600 transition-colors duration-300 text-center text-lg"
+              onClick={(e) => handleNavClick(e, "about")}
+              className="block hover:text-primary duration-300"
             >
-              About
+              SOBRE
             </a>
             <a
               href="#services"
-              onClick={(e) => scrollToSection(e, "services")}
-              className="block hover:text-blue-600 transition-colors duration-300 text-center text-lg"
+              onClick={(e) => handleNavClick(e, "services")}
+              className="block hover:text-primary duration-300"
             >
-              Services
+              SERVIÇOS
             </a>
             <a
               href="#projects"
-              onClick={(e) => scrollToSection(e, "projects")}
-              className="block hover:text-blue-600 transition-colors duration-300 text-center text-lg"
+              onClick={(e) => handleNavClick(e, "projects")}
+              className="block hover:text-primary duration-300"
             >
-              Projects
+              PROJETOS
             </a>
             <a
               href="#contacts"
-              onClick={(e) => scrollToSection(e, "contacts")}
-              className="block hover:text-blue-600 transition-colors duration-300 text-center text-lg"
+              onClick={(e) => handleNavClick(e, "contacts")}
+              className="block hover:text-primary duration-300"
             >
-              Contact
+              CONTATOS
             </a>
           </div>
         </div>

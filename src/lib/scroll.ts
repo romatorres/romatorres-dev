@@ -4,7 +4,9 @@ export const scrollToSection = (
 ) => {
   e.preventDefault();
   const element = document.getElementById(sectionId);
-  const offset = 80;
+  const header = document.querySelector('header');
+  // Obtenha a altura real do cabeçalho + algum preenchimento
+  const offset = header ? header.getBoundingClientRect().height : 80;
 
   if (element) {
     const elementPosition = element.getBoundingClientRect().top;

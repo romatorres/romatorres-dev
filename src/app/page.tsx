@@ -13,7 +13,9 @@ export default function Home() {
         <Header />
       </section>
 
-      <Hero />
+      <section>
+        <Hero />
+      </section>
 
       <section id="about">
         <About />
