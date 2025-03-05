@@ -25,16 +25,17 @@ export default function Services() {
           <h2 className="font-primary text-secondary text-4xl md:text-5xl lg:text-7xl font-bold mb-3 text-center">
             SERVIÇOS
           </h2>
-          <Image
-            src="/img/rectangle.svg"
-            alt="Retangulo Titulo"
-            height={12}
-            width={285}
-            className="mx-auto"
-          />
+          <div className="relative mx-auto w-40 h-3 md:w-72">
+            <Image
+              src="/img/rectangle.svg"
+              alt="Retangulo Titulo"
+              fill
+              className="object-cover"
+            />
+          </div>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 md:mt-16 mt-12 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 md:mt-16 mt-12 md:gap-8 gap-4">
           {services.map((service) => (
             <div
               key={service.id}

@@ -11,13 +11,14 @@ export default function About() {
           <h2 className="font-primary text-secondary text-4xl md:text-5xl lg:text-7xl font-bold mb-3 text-center">
             SOBRE
           </h2>
-          <Image
-            src="/img/rectangle.svg"
-            alt="Retangulo Titulo"
-            height={12}
-            width={193}
-            className="mx-auto"
-          />
+          <div className="relative mx-auto w-28 h-3 md:w-52">
+            <Image
+              src="/img/rectangle.svg"
+              alt="Retangulo Titulo"
+              fill
+              className="object-cover"
+            />
+          </div>
         </div>
 
         {/* Conteúdo Principal */}
