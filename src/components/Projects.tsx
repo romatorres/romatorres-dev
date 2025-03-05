@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import { Project } from "@/app/dashboard/Projects/types";
+import Link from "next/link";
 
 export default function Projects() {
   const [projects, setProjects] = useState<Project[]>([]);
@@ -40,25 +41,29 @@ export default function Projects() {
               key={project.id}
               className="group relative aspect-square overflow-hidden rounded-sm cursor-pointer"
             >
-              {project.imageUrl && (
-                <Image
-                  src={project.imageUrl}
-                  alt={project.title}
-                  fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-110"
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                />
-              )}
+              {project.link && (
+                <Link href={project.link} target="_blank">
+                  {project.imageUrl && (
+                    <Image
+                      src={project.imageUrl}
+                      alt={project.title}
+                      fill
+                      className="object-cover transition-transform duration-500 group-hover:scale-110"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    />
+                  )}
 
-              {/* Overlay that appears on hover */}
-              <div className="absolute inset-0 bg-black/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-center p-6">
-                <h3 className="font-primary uppercase text-xl font-bold text-secondary mb-2 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                  {project.title}
-                </h3>
-                <p className="font-secondary text-white line-clamp-3 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-100">
-                  {project.description}
-                </p>
-              </div>
+                  {/* Overlay that appears on hover */}
+                  <div className="absolute inset-0 bg-black/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-center p-6">
+                    <h3 className="font-primary uppercase text-xl font-bold text-secondary mb-2 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                      {project.title}
+                    </h3>
+                    <p className="font-secondary text-white line-clamp-3 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-100">
+                      {project.description}
+                    </p>
+                  </div>
+                </Link>
+              )}
             </div>
           ))}
         </div>

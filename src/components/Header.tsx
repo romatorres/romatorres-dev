@@ -26,9 +26,11 @@ export default function Header() {
   };
 
   return (
-    <header 
+    <header
       className={`fixed w-full backdrop-blur-sm z-50 transition-colors duration-300 ${
-        isScrolled || isOpen ? 'bg-background' : 'lg:bg-background/20 bg-background'
+        isScrolled || isOpen
+          ? "bg-background"
+          : "lg:bg-background/20 bg-background"
       }`}
     >
       <nav className="container mx-auto px-4 md:px-12 py-4 md:py-6">
@@ -105,7 +107,7 @@ export default function Header() {
           </button>
         </div>
         <div
-          className={`md:hidden fixed top-[64px] md:top-[72px] right-0 w-full bg-background/90 backdrop-blur-sm p-4 md:p-6 transform transition-transform duration-300 ease-in-out ${
+          className={`md:hidden fixed top-[64px] md:top-[72px] right-0 w-full bg-background/95 backdrop-blur-sm p-4 md:p-6 transform transition-transform duration-300 ease-in-out ${
             isOpen ? "translate-x-0" : "translate-x-full"
           }`}
         >

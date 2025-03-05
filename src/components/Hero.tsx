@@ -98,7 +98,7 @@ export default function Hero() {
           </Button>
         </div>
         {/* Mobile version of Rolar Scroll */}
-        <div className="flex lg:hidden mt-16 mb-8">
+        <div className="flex lg:hidden mt-16 mb-14">
           <p className="text-xs font-secondary text-secondary animate-tremor cursor-pointer">
             <a href="#about" onClick={(e) => scrollToSection(e, "about")}>
               ROLAR SCROLL &#x2192;

@@ -6,7 +6,7 @@ import { Button } from "./ui/button";
 export default function About() {
   return (
     <section id="about">
-      <div className="container mx-auto px-4 md:px-12 py-8 lg:py-16">
+      <div className="container mx-auto px-4 md:px-12 py-6 lg:py-16">
         <div>
           <h2 className="font-primary text-secondary text-4xl md:text-5xl lg:text-7xl font-bold mb-3 text-center">
             SOBRE
