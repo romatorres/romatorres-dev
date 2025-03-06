@@ -8,6 +8,7 @@
   }
 }
 
+/* Efeito Rolar Scroll */
 @keyframes tremor {
   0%,
   100% {
@@ -32,6 +33,7 @@
   animation: tremor 0.9s infinite;
 }
 
+/* Efeito Digitação */
 @keyframes blink {
   0% {
     opacity: 1;

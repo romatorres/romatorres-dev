@@ -64,7 +64,7 @@ export default function Sidebar() {
 
       {/* Sidebar */}
       <div
-        className={`fixed top-0 left-0 h-full bg-gray-900 text-white w-64 transform transition-transform duration-200 ease-in-out lg:translate-x-0 flex flex-col ${
+        className={`fixed top-0 left-0 h-full bg-background text-white w-64 transform transition-transform duration-200 ease-in-out lg:translate-x-0 flex flex-col ${
           isOpen ? "translate-x-0" : "-translate-x-full"
         }`}
       >
@@ -122,7 +122,7 @@ export default function Sidebar() {
             className="flex items-center space-x-2 text-gray-400 hover:text-white w-full p-2 rounded hover:bg-gray-800"
           >
             <LogOut className="w-5 h-5" />
-            <span>Sign out</span>
+            <span>Sair</span>
           </button>
         </div>
       </div>

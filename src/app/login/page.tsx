@@ -26,35 +26,37 @@ export default function Login() {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="bg-white p-8 rounded-lg shadow-md w-96">
-        <h1 className="text-2xl font-bold mb-6 text-center">Login</h1>
+    <div className="min-h-screen flex items-center justify-center bg-background">
+      <div className="bg-[#020202] py-16 px-10 font-secondary rounded-lg shadow-md w-[500px]">
+        <h1 className="text-2xl font-bold text-secondary mb-10 text-center">
+          Login
+        </h1>
         <form onSubmit={handleSubmit}>
           <div className="mb-4">
-            <label className="block text-gray-700 text-sm font-bold mb-2">
+            <label className="block text-gray-300 text-sm font-semibold mb-2">
               Email
             </label>
             <Input
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="w-full"
+              className="w-full text-white px-4 py-6"
               required
             />
           </div>
           <div className="mb-6">
-            <label className="block text-gray-700 text-sm font-bold mb-2">
+            <label className="block text-gray-300 text-sm font-semibold mb-2">
               Senha
             </label>
             <Input
               type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="w-full"
+              className="w-full text-white px-4 py-6"
               required
             />
           </div>
-          <Button type="submit" className="w-full" variant="default">
+          <Button type="submit" className="w-full mt-8" variant="default">
             Entrar
           </Button>
         </form>

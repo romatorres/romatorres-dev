@@ -4,6 +4,7 @@ import { useState } from "react";
 import ServiceForm from "./components/ServiceForm";
 import ServiceList from "./components/ServiceList";
 import { Plus } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 export default function ServicesPage() {
   const [isCreating, setIsCreating] = useState(false);
@@ -13,13 +14,13 @@ export default function ServicesPage() {
       <div className="flex justify-between items-center">
         <h1 className="text-2xl font-bold">Serviços</h1>
         {!isCreating && (
-          <button
+          <Button
             onClick={() => setIsCreating(true)}
-            className="flex items-center gap-2 bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700"
+            className="flex items-center gap-2"
           >
             <Plus className="w-5 h-5" />
             Serviços
-          </button>
+          </Button>
         )}
       </div>
 

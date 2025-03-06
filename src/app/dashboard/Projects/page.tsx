@@ -4,6 +4,7 @@ import { Plus } from "lucide-react";
 import ProjectForm from "./components/ProjectForm";
 import ProjectList from "./components/ProjectList";
 import { useState } from "react";
+import { Button } from "@/components/ui/button";
 
 export default function Projects() {
   const [isCreating, setIsCreating] = useState(false);
@@ -13,13 +14,13 @@ export default function Projects() {
       <div className="flex justify-between items-center">
         <h2 className="text-2xl font-bold mb-4">Projetos</h2>
         {!isCreating && (
-          <button
+          <Button
             onClick={() => setIsCreating(true)}
-            className="flex items-center gap-2 bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700"
+            className="flex items-center gap-2"
           >
             <Plus className="w-5 h-5" />
             Projetos
-          </button>
+          </Button>
         )}
       </div>
       {isCreating ? (
