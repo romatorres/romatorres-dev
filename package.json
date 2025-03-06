@@ -1,10 +1,11 @@
 {
-  "name": "project_dashboard",
+  "name": "romatorres-dev",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
-    "build": "next build",
+    "postinstall": "prisma generate",
+    "build": "prisma generate && next build",
     "start": "next start",
     "lint": "next lint",
     "seed": "ts-node prisma/seed.ts"
@@ -37,6 +38,7 @@
     "postcss": "^8",
     "prisma": "^6.4.0",
     "tailwindcss": "^3.4.1",
+    "ts-node": "^10.9.2",
     "typescript": "^5"
   }
 }
