@@ -92,7 +92,7 @@ export default function Header() {
             aria-expanded={isOpen}
           >
             <svg
-              className="w-5 h-5 md:w-6 md:h-6"
+              className="w-6 h-6 md:w-6 md:h-6"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -111,7 +111,7 @@ export default function Header() {
             isOpen ? "translate-x-0" : "translate-x-full"
           }`}
         >
-          <div className="space-y-4 flex flex-col items-center text-secondary text-xs font-medium">
+          <div className="space-y-4 flex flex-col items-center text-secondary text-sm font-medium">
             <a
               href="#home"
               onClick={(e) => handleNavClick(e, "header")}

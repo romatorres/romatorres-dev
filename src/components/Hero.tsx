@@ -99,7 +99,7 @@ export default function Hero() {
         </div>
         {/* Mobile version of Rolar Scroll */}
         <div className="flex lg:hidden mt-16 mb-14">
-          <p className="text-xs font-secondary text-secondary animate-tremor cursor-pointer">
+          <p className="writing-mode-vertical-lr rotate-180 text-xs font-secondary text-secondary animate-tremor cursor-pointer">
             <a href="#about" onClick={(e) => scrollToSection(e, "about")}>
               ROLAR SCROLL &#x2192;
             </a>
