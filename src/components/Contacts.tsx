@@ -21,10 +21,10 @@ export default function Contacts() {
           </div>
         </div>
 
-        <div className="flex md:flex-row flex-col md:justify-between justify-center md:mt-16 mt-12">
-          <div className="flex flex-col md:gap-8 gap-6 md:mb-0 mb-14">
-            <div className="flex items-center gap-6">
-              <div className="relative md:h-20 md:w-20 h-16 w-16">
+        <div className="flex lg:flex-row flex-col lg:justify-between justify-center items-center lg:mt-16 mt-12">
+          <div className="flex flex-col lg:gap-8 gap-6 lg:mb-0 mb-14 lg:w-1/2">
+            <div className="flex items-center lg:gap-6 gap-4">
+              <div className="relative lg:h-20 lg:w-20 h-16 w-16">
                 <Image
                   src="/img/localizacao.svg"
                   alt="Icone Localização"
@@ -41,8 +41,8 @@ export default function Contacts() {
                 </p>
               </div>
             </div>
-            <div className="flex items-center gap-6">
-              <div className="relative md:h-20 md:w-20 h-16 w-16">
+            <div className="flex items-center lg:gap-6 gap-4">
+              <div className="relative lg:h-20 lg:w-20 h-16 w-16">
                 <Image
                   src="/img/telefone.svg"
                   alt="Icone Telefone"
@@ -59,8 +59,8 @@ export default function Contacts() {
                 </p>
               </div>
             </div>
-            <div className="flex items-center gap-6">
-              <div className="relative md:h-20 md:w-20 h-16 w-16">
+            <div className="flex items-center lg:gap-6 gap-4">
+              <div className="relative lg:h-20 lg:w-20 h-16 w-16">
                 <Image
                   src="/img/email.svg"
                   alt="Icone Email"
@@ -79,7 +79,7 @@ export default function Contacts() {
             </div>
           </div>
 
-          <form className="max-w-2xl">
+          <form className="w-full lg:w-2/5 max-w-4xl">
             <div className="flex gap-2 mb-4">
               <input
                 type="text"
