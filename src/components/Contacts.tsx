@@ -33,7 +33,7 @@ export default function Contacts() {
                 />
               </div>
               <div>
-                <h3 className="md:text-2xl text-xl text-secondary font-primary font-medium mb-2">
+                <h3 className="md:text-2xl text-xl text-secondary font-primary font-medium md:mb-2 mb-1">
                   LOCALIZAÇÃO
                 </h3>
                 <p className="md:text-xl text-lg text-white font-primary">
@@ -51,7 +51,7 @@ export default function Contacts() {
                 />
               </div>
               <div>
-                <h3 className="md:text-2xl text-xl text-secondary font-primary font-medium mb-2">
+                <h3 className="md:text-2xl text-xl text-secondary font-primary font-medium md:mb-2 mb-1">
                   TELEFONE
                 </h3>
                 <p className="md:text-xl text-lg text-white font-primary">
@@ -69,7 +69,7 @@ export default function Contacts() {
                 />
               </div>
               <div>
-                <h3 className="md:text-2xl text-xl text-secondary font-primary font-medium mb-2">
+                <h3 className="md:text-2xl text-xl text-secondary font-primary font-medium md:mb-2 mb-1">
                   E-MAIL
                 </h3>
                 <p className="md:text-xl text-lg text-white font-primary">

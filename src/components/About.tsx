@@ -2,8 +2,14 @@
 
 import Image from "next/image";
 import { Button } from "./ui/button";
+import { scrollToSection } from "@/lib/scroll";
 
 export default function About() {
+  const handleHireClick = (e: React.MouseEvent) => {
+    scrollToSection(e as React.MouseEvent<HTMLButtonElement>, "contacts");
+    window.open("https://wa.me/75991340520", "_blank");
+  };
+
   return (
     <section id="about">
       <div className="container mx-auto px-4 md:px-12 py-6 lg:py-16">
@@ -62,8 +68,14 @@ export default function About() {
               algo incrível juntos?
             </p>
             <div className="flex flex-col md:flex-row gap-4 mt-12">
-              <Button className="w-full md:w-auto">CONTRATAR</Button>
-              <Button variant="outline" className="w-full md:w-auto">
+              <Button onClick={handleHireClick} className="w-full md:w-auto">
+                CONTRATAR
+              </Button>
+              <Button
+                onClick={(e) => scrollToSection(e, "projects")}
+                variant="outline"
+                className="w-full md:w-auto"
+              >
                 MEUS TRABALHOS
               </Button>
             </div>

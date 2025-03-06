@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import { Button } from "./ui/button";
 import { Service } from "@/app/dashboard/Services/types";
+import { scrollToSection } from "@/lib/scroll";
 
 export default function Services() {
   const [services, setServices] = useState<Service[]>([]);
@@ -17,6 +18,11 @@ export default function Services() {
 
     fetchServices();
   }, []);
+
+  const handleHireClick = (e: React.MouseEvent) => {
+    scrollToSection(e as React.MouseEvent<HTMLButtonElement>, "contacts");
+    window.open("https://wa.me/75991340520", "_blank");
+  };
 
   return (
     <section id="services">
@@ -64,8 +70,14 @@ export default function Services() {
           ))}
         </div>
         <div className="flex flex-col justify-center md:flex-row gap-4 mt-20">
-          <Button className="w-full md:w-auto">CONTRATAR</Button>
-          <Button variant="outline" className="w-full md:w-auto">
+          <Button onClick={handleHireClick} className="w-full md:w-auto">
+            CONTRATAR
+          </Button>
+          <Button
+            onClick={(e) => scrollToSection(e, "projects")}
+            variant="outline"
+            className="w-full md:w-auto"
+          >
             MEUS TRABALHOS
           </Button>
         </div>

@@ -107,11 +107,11 @@ export default function Header() {
           </button>
         </div>
         <div
-          className={`md:hidden fixed top-[64px] md:top-[72px] right-0 w-full bg-background/95 backdrop-blur-sm p-4 md:p-6 transform transition-transform duration-300 ease-in-out ${
+          className={`md:hidden fixed top-[64px] md:top-[72px] right-0 w-full bg-background/95 backdrop-blur-sm p-5 md:p-6 transform transition-transform duration-300 ease-in-out ${
             isOpen ? "translate-x-0" : "translate-x-full"
           }`}
         >
-          <div className="space-y-4 flex flex-col items-center text-secondary text-sm font-medium">
+          <div className="space-y-5 flex flex-col items-center text-secondary text-sm font-medium">
             <a
               href="#home"
               onClick={(e) => handleNavClick(e, "header")}

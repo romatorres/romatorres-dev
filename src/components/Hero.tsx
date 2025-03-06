@@ -36,6 +36,11 @@ export default function Hero() {
     return () => clearTimeout(timer);
   });
 
+  const handleHireClick = (e: React.MouseEvent) => {
+    scrollToSection(e as React.MouseEvent<HTMLButtonElement>, "contacts");
+    window.open("https://wa.me/75991340520", "_blank");
+  };
+
   return (
     <section
       id="hero"
@@ -87,9 +92,8 @@ export default function Hero() {
       </div>
       <div className="flex flex-col items-center gap-4 mt-20">
         <div className="flex gap-4">
-          <Button onClick={(e) => scrollToSection(e, "contacts")}>
-            CONTRATAR
-          </Button>
+          <Button onClick={handleHireClick}>CONTRATAR</Button>
+
           <Button
             variant="outline"
             onClick={(e) => scrollToSection(e, "projects")}
