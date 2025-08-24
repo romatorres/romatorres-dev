@@ -45,7 +45,7 @@ export default function Services() {
           {services.map((service) => (
             <div
               key={service.id}
-              className="flex items-center  bg-gradient-to-t from-[#181818] to-[#121212] rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
+              className="flex items-center  bg-gradient-to-t from-[#181818] to-[#121212] rounded-xl shadow-lg overflow-hidden hover:shadow-xl duration-300 hover:scale-105 transition-transform cursor-pointer"
             >
               <div className="flex-shrink-0 relative md:h-28 md:w-28 h-20 w-20 md:m-8 m-4">
                 {service.imageUrl && (

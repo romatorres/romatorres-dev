@@ -73,20 +73,40 @@ export default function Hero() {
 
         {/* Ícones na vertical */}
         <div className="flex flex-row lg:flex-col items-center gap-4 px-10 order-2 lg:order-3">
-          <Image src="/img/git.svg" alt="Icone Github" height={26} width={26} />
+          <Image
+            src="/img/git.svg"
+            alt="Icone Github"
+            height={32}
+            width={32}
+            className="hover:scale-110 transition-transform duration-200 cursor-pointer"
+          />
           <Image
             src="/img/insta.svg"
             alt="Icone Instagram"
-            height={26}
-            width={26}
+            height={32}
+            width={32}
+            className="hover:scale-110 transition-transform duration-200 cursor-pointer"
           />
-          <Image src="/img/x.svg" alt="Icone X" height={26} width={26} />
-          <Image src="/img/be.svg" alt="Icone Be" height={26} width={26} />
+          <Image
+            src="/img/x.svg"
+            alt="Icone X"
+            height={32}
+            width={32}
+            className="hover:scale-110 transition-transform duration-200 cursor-pointer"
+          />
+          <Image
+            src="/img/be.svg"
+            alt="Icone Be"
+            height={32}
+            width={32}
+            className="hover:scale-110 transition-transform duration-200 cursor-pointer"
+          />
           <Image
             src="/img/pinterest.svg"
             alt="Icone Pinterest"
-            height={26}
-            width={26}
+            height={32}
+            width={32}
+            className="hover:scale-110 transition-transform duration-200 cursor-pointer"
           />
         </div>
       </div>
