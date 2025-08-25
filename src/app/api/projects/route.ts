@@ -6,7 +6,11 @@ import { z } from "zod";
 
 export async function GET() {
   try {
-    const projects = await prisma.project.findMany();
+    const projects = await prisma.project.findMany({
+      orderBy: {
+        order: "asc",
+      },
+    });
 
     return NextResponse.json({ projects });
   } catch (error: any) {
